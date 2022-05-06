@@ -2,6 +2,7 @@
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 
+# Configura as opções usadas na execução do pipeline
 beam_options = PipelineOptions(
     runner='DirectRunner',
     project='data-pipeline',
