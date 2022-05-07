@@ -13,11 +13,13 @@ import csv
     #temp_location='/home/priscila/PycharmProjects/Projeto_apache_beam',
 )
 
-with beam.Pipeline(runner='InteractiveRunner') as pipeline:
-    read_first_file = (
-        pipeline
-        | beam.io.ReadFromText('/home/priscila/PycharmProjects/Projeto_apache_beam'
-                                                                '/input/*.csv', skip_header_lines=True)
-        | beam.Map(lambda x: x.split(','))
-        | beam.Map(print)
-    )
+# Abre os arquivos, lê cada linha, transforma cada uma no formato de dicionário e armazena os dados em variáveis
+with open('input/EstadosIBGE.csv') as f:
+    estados_ibge = [dict(row) for row in csv.DictReader(f)]
+
+with open('input/Vendas_por_dia.csv') as f:
+    vendas_por_dia = [dict(row) for row in csv.DictReader(f)]
+
+with beam.Pipeline(InteractiveRunner()) as pipeline:
+    pcoll_estados_ibge = (pipeline | 'Cria a primeira PCollection' >> beam.Create(estados_ibge))
+    pcoll_vendas_por_dia = (pipeline | 'Cria a segunda PCollection' >> beam.Create(vendas_por_dia))
