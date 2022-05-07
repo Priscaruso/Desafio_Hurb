@@ -20,5 +20,13 @@ with open('input/Vendas_por_dia.csv') as f:
     vendas_por_dia = [dict(row) for row in csv.DictReader(f)]
 
 with beam.Pipeline(options=beam_options) as pipeline:
-    pcoll_estados_ibge = (pipeline | 'Cria a primeira PCollection' >> beam.Create(estados_ibge))
-    pcoll_vendas_por_dia = (pipeline | 'Cria a segunda PCollection' >> beam.Create(vendas_por_dia))
+    pcoll_estados_ibge = (
+        pipeline
+        | 'Cria a primeira PCollection' >> beam.Create(estados_ibge)
+        | 'Mostra os elementos da primeira Pcollection' >> beam.Map(print)
+    )
+    pcoll_vendas_por_dia = (
+            pipeline
+            | 'Cria a segunda PCollection' >> beam.Create(vendas_por_dia)
+            | 'Mostra os elementos da segunda Pcollection' >> beam.Map(print)
+    )
