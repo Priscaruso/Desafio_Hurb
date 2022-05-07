@@ -6,14 +6,14 @@ from apache_beam.runners.interactive.interactive_runner import InteractiveRunner
 import csv
 
 # Configura as opções usadas na execução do pipeline
-beam_options = PipelineOptions(
-    runner='DirectRunner',
-    project='data-pipeline',
-    job_name='unique-job-name',
-    temp_location='/home/priscila/PycharmProjects/Projeto_apache_beam',
+    #beam_options = PipelineOptions(
+    #runner='DirectRunner',
+    #project='data-pipeline',
+    #job_name='unique-job-name',
+    #temp_location='/home/priscila/PycharmProjects/Projeto_apache_beam',
 )
 
-with beam.Pipeline(options=beam_options) as pipeline:
+with beam.Pipeline(runner='InteractiveRunner') as pipeline:
     read_first_file = (
         pipeline
         | beam.io.ReadFromText('/home/priscila/PycharmProjects/Projeto_apache_beam'
