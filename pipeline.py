@@ -11,21 +11,16 @@ beam_options = PipelineOptions(
     job_name='unique-job-name',
     temp_location='/home/priscila/PycharmProjects/Projeto_apache_beam')
 
-# Abre os arquivos, lê cada linha, transforma cada uma no formato de dicionário e armazena os dados em variáveis
-with open('input/EstadosIBGE.csv') as f:
-    estados_ibge = [dict(row) for row in csv.DictReader(f)]
+# Cria o objeto pipeline com as configurações desejadas
+pipeline = beam.Pipeline(options=beam_options)
 
-with open('input/Vendas_por_dia.csv') as f:
-    vendas_por_dia = [dict(row) for row in csv.DictReader(f)]
-
-with beam.Pipeline(options=beam_options) as pipeline:
-    pcoll_estados_ibge = (
+# Pipeline que lê cada arquivo CSV como um Beam Dataframe
+df_estados_ibge = (
         pipeline
-        | 'Cria a primeira PCollection' >> beam.Create(estados_ibge)
-        | 'Mostra os elementos da primeira Pcollection' >> beam.Map(print)
+        | 'Lê o primeiro arquivo CSV' >> beam.dataframe.io.read_csv('input/EstadosIBGE.csv')
     )
-    pcoll_vendas_por_dia = (
-            pipeline
-            | 'Cria a segunda PCollection' >> beam.Create(vendas_por_dia)
-            | 'Mostra os elementos da segunda Pcollection' >> beam.Map(print)
+
+df_vendas_por_dia = (
+        pipeline
+        | 'Lê o segundo arquivo CSV' >> beam.dataframe.io.read_csv('input/Vendas_por_dia.csv')
     )
