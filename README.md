@@ -32,11 +32,15 @@
 ## Desenvolvimento do Script
 Para o desenvolvimento do script, foi pensado na divisão do mesmo de acordo com as seguintes etapas:
 
--Importação das bibliotecas: foram utilizadas as bibliotecas dataframe, 
+-Importação das bibliotecas: foram utilizadas as bibliotecas apache_beam, módulo dataframe da biblioteca apache_beam para operar com dataframes, módulo PipelineOptions do apache_beam.options.pipeline_options para configurar as opções do pipeline e o módulo apache_beam.dataframe.io para usar o módulo read_csv na leitura de arquivos csv.
 
--Configuração das opções do 
+-Configuração das opções do pipeline: uso do módulo beam.options para configurar o Runner que executará o pipeline, que no caso é o DirectRunner para ser executado localmente.
+
+-Criação do objeto pipeline: objeto que é utilizado na criação do pipeline, usando as configurações feitas nas opções no passo anterior.
 
 -Leitura de cada arquivos CSV: Para realizar a leitura dos arquivos CSV foi pensado na nova funcionalidade Beam Dataframe do Apache Beam, que já foi o módulo read_csv, facilitando na leitura desse tipo de arquivo.
+
+-Criação de bloco para execução de operações não paralelas com dataframes: usa a função dataframe.allow_non_parallel_operations() para poder realizar operações não suportadas com o Beam Dataframe. Todas as próximas etapas são executadas dentro desse bloco.
 
 -Merge dos arquivos CSV: junção com join resetando os índices de cada dataframe, para unir dataframes com múltiplos índices.
 
