@@ -155,7 +155,7 @@ df.to_csv('/output/desafio_hurb.csv', index=False)
 
 # Converte o dataframe df gerado para JSON sem salvar os índices, com indentação de 4 linhas, armazenando o arquivo na
 # pasta output
-df.to_json('/content/teste/desafio_hurb.json', orient='records', force_ascii=True, indent=4)
+df.to_json('/output/desafio_hurb.json', orient='records', force_ascii=True, indent=4)
 
 if __name__ == '__main__':
     pipeline.run()
