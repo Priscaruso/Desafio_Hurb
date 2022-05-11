@@ -26,14 +26,18 @@ df_vendas_por_dia = (
         | 'Lê o segundo arquivo CSV' >> beam.dataframe.io.read_csv('input/Vendas_por_dia.csv')
     )
 
-# Cria um novo dataframe juntando o conteúdo dos dois beam dataframes criados
-merged_df = df_estados_ibge.join(df_vendas_por_dia, how='outer')
+# Simula o Beam Dataframe como um Pandas Dataframe para usar transformações em pandas
+df_estados_ibge = ib.collect(df_estados_ibge)
+df_vendas_por_dia = ib.collect(df_vendas_por_dia)
+
+# Cria um novo dataframe juntando o conteúdo dos dois beam dataframes criados, resetando o índice
+df = df_vendas_por_dia.reset_index(drop=True).join(df_estados_ibge)
 
 # Renomeia a coluna 'UF [-]' do dataframe para 'Estado'
-renamed_column_df = merged_df.rename(columns={'UF [-]': 'Estado'})
+df = df.rename(columns={'UF [-]': 'Estado'})
 
 # Remove todas as colunas não desejadas do dataframe
-dropped_columns_df = renamed_column_df.drop(['Código [-]', 'Gentílico [-]', 'Governador [2019]', 'Capital [2010]',
+df = df.drop(['Código [-]', 'Gentílico [-]', 'Governador [2019]', 'Capital [2010]',
                                              'Área Territorial - km² [2019]', 'População estimada - pessoas [2020]',
                                              'Densidade demográfica - hab/km² [2010]',
                                              'Matrículas no ensino fundamental - matrículas [2018]',
@@ -42,9 +46,6 @@ dropped_columns_df = renamed_column_df.drop(['Código [-]', 'Gentílico [-]', 'G
                                              'Despesas empenhadas - R$ (×1000) [2017]',
                                              'Rendimento mensal domiciliar per capita - R$ [2019]',
                                              'Total de veículos - veículos [2018]'], axis=1)
-
-# Simula o beam dataframe como um pandas dataframe para usar transformações em pandas
-df = ib.collect(dropped_columns_df)
 
 # Filtra e substitui os valores de NaN pelos estados de acordo com os valores da coluna 'UF'
 filtro_AC = (df['UF'] == 'AC')
