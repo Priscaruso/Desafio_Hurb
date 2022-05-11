@@ -1,0 +1,225 @@
+Data,Estado,UF,QtdVendas,QtdAprovados,QtdCancelamentos
+2014-09-01,Bahia,BA,3,2,1
+2014-09-01,Ceará,CE,2,2,0
+2014-09-01,Mato Grosso do Sul,MS,2,2,0
+2014-09-01,Minas Gerais,MG,2,2,0
+2014-09-01,Paraná,PR,1,0,1
+2014-09-01,Rio de Janeiro,RJ,8,1,7
+2014-09-01,São Paulo,SP,2,2,0
+2014-09-02,Amazonas,AM,1,1,0
+2014-09-02,Bahia,BA,1,0,1
+2014-09-02,Pernambuco,PE,1,1,0
+2014-09-02,Rio Grande do Norte,RN,2,0,2
+2014-09-02,Rio de Janeiro,RJ,9,3,6
+2014-09-02,Santa Catarina,SC,1,1,0
+2014-09-02,São Paulo,SP,5,1,4
+2014-09-03,Ceará,CE,4,1,3
+2014-09-03,Goiás,GO,1,0,1
+2014-09-03,Paraíba,PB,1,0,1
+2014-09-03,Pernambuco,PE,1,1,0
+2014-09-03,Rio Grande do Norte,RN,2,2,0
+2014-09-03,Rio de Janeiro,RJ,7,2,5
+2014-09-03,Santa Catarina,SC,1,1,0
+2014-09-03,São Paulo,SP,3,1,2
+2014-09-04,Bahia,BA,2,1,1
+2014-09-04,Paraná,PR,2,1,1
+2014-09-04,Rio Grande do Norte,RN,2,1,1
+2014-09-04,Rio de Janeiro,RJ,8,6,2
+2014-09-04,Santa Catarina,SC,1,1,0
+2014-09-04,São Paulo,SP,5,3,2
+2014-09-05,Bahia,BA,7,3,4
+2014-09-05,Goiás,GO,1,0,1
+2014-09-05,Minas Gerais,MG,1,0,1
+2014-09-05,Pernambuco,PE,2,2,0
+2014-09-05,Rio de Janeiro,RJ,3,2,1
+2014-09-05,Santa Catarina,SC,1,1,0
+2014-09-05,São Paulo,SP,5,1,4
+2014-09-06,Alagoas,AL,1,0,1
+2014-09-06,Ceará,CE,1,1,0
+2014-09-06,Paraná,PR,1,1,0
+2014-09-06,Paraíba,PB,1,0,1
+2014-09-06,Pernambuco,PE,1,1,0
+2014-09-06,Rio Grande do Norte,RN,4,3,1
+2014-09-06,Rio de Janeiro,RJ,7,3,4
+2014-09-06,Sergipe,SE,1,1,0
+2014-09-06,São Paulo,SP,3,2,1
+2014-09-07,Alagoas,AL,1,1,0
+2014-09-07,Goiás,GO,2,0,2
+2014-09-07,Paraná,PR,2,2,0
+2014-09-07,Paraíba,PB,1,1,0
+2014-09-07,Rio de Janeiro,RJ,4,1,3
+2014-09-07,São Paulo,SP,10,2,8
+2014-09-08,Amazonas,AM,1,0,1
+2014-09-08,Bahia,BA,2,0,2
+2014-09-08,Paraná,PR,4,1,3
+2014-09-08,Pernambuco,PE,1,1,0
+2014-09-08,Rio Grande do Norte,RN,1,1,0
+2014-09-08,Rio Grande do Sul,RS,1,0,1
+2014-09-08,Rio de Janeiro,RJ,9,4,5
+2014-09-08,Santa Catarina,SC,1,1,0
+2014-09-09,Bahia,BA,1,1,0
+2014-09-09,Ceará,CE,1,0,1
+2014-09-09,Paraná,PR,2,0,2
+2014-09-09,Pernambuco,PE,1,0,1
+2014-09-09,Rio Grande do Sul,RS,5,3,2
+2014-09-09,Rio de Janeiro,RJ,3,3,0
+2014-09-09,Santa Catarina,SC,2,2,0
+2014-09-09,São Paulo,SP,5,3,2
+2014-09-10,Bahia,BA,1,1,0
+2014-09-10,Goiás,GO,1,0,1
+2014-09-10,Paraná,PR,2,2,0
+2014-09-10,Rio Grande do Sul,RS,1,1,0
+2014-09-10,Rio de Janeiro,RJ,9,7,2
+2014-09-10,Santa Catarina,SC,1,0,1
+2014-09-10,São Paulo,SP,5,5,0
+2014-09-11,Alagoas,AL,3,1,2
+2014-09-11,Bahia,BA,1,1,0
+2014-09-11,Minas Gerais,MG,1,1,0
+2014-09-11,Paraná,PR,1,1,0
+2014-09-11,Paraíba,PB,1,0,1
+2014-09-11,Pernambuco,PE,1,0,1
+2014-09-11,Rio Grande do Norte,RN,1,0,1
+2014-09-11,Rio de Janeiro,RJ,6,3,3
+2014-09-11,Santa Catarina,SC,1,1,0
+2014-09-11,São Paulo,SP,4,3,1
+2014-09-12,Alagoas,AL,2,1,1
+2014-09-12,Bahia,BA,4,1,3
+2014-09-12,Pernambuco,PE,1,0,1
+2014-09-12,Rio de Janeiro,RJ,8,5,3
+2014-09-12,Santa Catarina,SC,5,1,4
+2014-09-13,Alagoas,AL,2,1,1
+2014-09-13,Bahia,BA,1,0,1
+2014-09-13,Goiás,GO,1,0,1
+2014-09-13,Minas Gerais,MG,1,1,0
+2014-09-13,Pernambuco,PE,1,0,1
+2014-09-13,Rio Grande do Norte,RN,2,2,0
+2014-09-13,Rio Grande do Sul,RS,1,0,1
+2014-09-13,Rio de Janeiro,RJ,2,2,0
+2014-09-13,Santa Catarina,SC,3,0,3
+2014-09-13,São Paulo,SP,6,1,5
+2014-09-14,Ceará,CE,1,0,1
+2014-09-14,Goiás,GO,3,0,3
+2014-09-14,Minas Gerais,MG,1,0,1
+2014-09-14,Paraíba,PB,1,0,1
+2014-09-14,Pernambuco,PE,2,0,2
+2014-09-14,Rio Grande do Sul,RS,1,1,0
+2014-09-14,Rio de Janeiro,RJ,3,1,2
+2014-09-14,Santa Catarina,SC,1,1,0
+2014-09-14,Sergipe,SE,1,0,1
+2014-09-14,São Paulo,SP,6,5,1
+2014-09-15,Bahia,BA,1,0,1
+2014-09-15,Goiás,GO,2,1,1
+2014-09-15,Minas Gerais,MG,2,0,2
+2014-09-15,Paraná,PR,2,1,1
+2014-09-15,Rio de Janeiro,RJ,5,2,3
+2014-09-15,Santa Catarina,SC,4,0,4
+2014-09-15,São Paulo,SP,4,2,2
+2014-09-16,Paraná,PR,2,0,2
+2014-09-16,Paraíba,PB,2,1,1
+2014-09-16,Rio Grande do Norte,RN,1,1,0
+2014-09-16,Rio Grande do Sul,RS,2,1,1
+2014-09-16,Rio de Janeiro,RJ,7,3,4
+2014-09-16,Santa Catarina,SC,2,2,0
+2014-09-16,São Paulo,SP,4,4,0
+2014-09-17,Ceará,CE,1,0,1
+2014-09-17,Espírito Santo,ES,1,0,1
+2014-09-17,Mato Grosso do Sul,MS,1,0,1
+2014-09-17,Minas Gerais,MG,1,1,0
+2014-09-17,Paraná,PR,1,0,1
+2014-09-17,Paraíba,PB,1,0,1
+2014-09-17,Rio de Janeiro,RJ,11,7,4
+2014-09-17,Santa Catarina,SC,1,0,1
+2014-09-17,São Paulo,SP,2,0,2
+2014-09-18,Bahia,BA,4,1,3
+2014-09-18,Goiás,GO,2,2,0
+2014-09-18,Paraná,PR,2,2,0
+2014-09-18,Rio de Janeiro,RJ,3,0,3
+2014-09-18,Santa Catarina,SC,7,4,3
+2014-09-18,São Paulo,SP,2,2,0
+2014-09-19,Alagoas,AL,1,0,1
+2014-09-19,Amazonas,AM,1,1,0
+2014-09-19,Bahia,BA,1,1,0
+2014-09-19,Ceará,CE,1,0,1
+2014-09-19,Rio Grande do Norte,RN,1,1,0
+2014-09-19,Rio de Janeiro,RJ,10,8,2
+2014-09-19,Santa Catarina,SC,1,0,1
+2014-09-19,São Paulo,SP,4,3,1
+2014-09-20,Bahia,BA,2,2,0
+2014-09-20,Minas Gerais,MG,1,0,1
+2014-09-20,Pernambuco,PE,1,1,0
+2014-09-20,Rio Grande do Sul,RS,1,1,0
+2014-09-20,Rio de Janeiro,RJ,9,8,1
+2014-09-20,Santa Catarina,SC,2,1,1
+2014-09-20,São Paulo,SP,4,3,1
+2014-09-21,Bahia,BA,2,1,1
+2014-09-21,Ceará,CE,2,1,1
+2014-09-21,Paraná,PR,1,1,0
+2014-09-21,Pernambuco,PE,2,0,2
+2014-09-21,Rio Grande do Norte,RN,1,1,0
+2014-09-21,Rio de Janeiro,RJ,3,0,3
+2014-09-21,Santa Catarina,SC,1,0,1
+2014-09-21,São Paulo,SP,8,3,5
+2014-09-22,Bahia,BA,3,1,2
+2014-09-22,Goiás,GO,2,1,1
+2014-09-22,Mato Grosso do Sul,MS,1,1,0
+2014-09-22,Minas Gerais,MG,3,1,2
+2014-09-22,Paraíba,PB,2,1,1
+2014-09-22,Rio Grande do Norte,RN,2,1,1
+2014-09-22,Rio Grande do Sul,RS,3,0,3
+2014-09-22,Santa Catarina,SC,1,0,1
+2014-09-22,São Paulo,SP,3,2,1
+2014-09-23,Alagoas,AL,3,1,2
+2014-09-23,Amazonas,AM,1,0,1
+2014-09-23,Bahia,BA,3,1,2
+2014-09-23,Espírito Santo,ES,1,1,0
+2014-09-23,Minas Gerais,MG,1,0,1
+2014-09-23,Rio Grande do Norte,RN,1,1,0
+2014-09-23,Rio de Janeiro,RJ,9,3,6
+2014-09-23,São Paulo,SP,1,1,0
+2014-09-24,Espírito Santo,ES,2,1,1
+2014-09-24,Mato Grosso do Sul,MS,1,0,1
+2014-09-24,Rio Grande do Norte,RN,2,0,2
+2014-09-24,Rio de Janeiro,RJ,10,5,5
+2014-09-24,Santa Catarina,SC,1,0,1
+2014-09-24,São Paulo,SP,4,2,2
+2014-09-25,Alagoas,AL,1,1,0
+2014-09-25,Bahia,BA,1,0,1
+2014-09-25,Ceará,CE,1,1,0
+2014-09-25,Goiás,GO,1,1,0
+2014-09-25,Minas Gerais,MG,1,1,0
+2014-09-25,Pernambuco,PE,1,1,0
+2014-09-25,Rio Grande do Norte,RN,1,1,0
+2014-09-25,Rio de Janeiro,RJ,6,5,1
+2014-09-25,Santa Catarina,SC,1,0,1
+2014-09-25,São Paulo,SP,6,5,1
+2014-09-26,Bahia,BA,3,1,2
+2014-09-26,Ceará,CE,1,1,0
+2014-09-26,Espírito Santo,ES,1,1,0
+2014-09-26,Goiás,GO,1,1,0
+2014-09-26,Minas Gerais,MG,2,2,0
+2014-09-26,Rio Grande do Norte,RN,2,2,0
+2014-09-26,Rio Grande do Sul,RS,1,1,0
+2014-09-26,Rio de Janeiro,RJ,3,2,1
+2014-09-26,São Paulo,SP,6,6,0
+2014-09-27,Bahia,BA,2,1,1
+2014-09-27,Goiás,GO,1,1,0
+2014-09-27,Minas Gerais,MG,4,1,3
+2014-09-27,Rio Grande do Norte,RN,3,1,2
+2014-09-27,Rio de Janeiro,RJ,6,2,4
+2014-09-27,Santa Catarina,SC,1,1,0
+2014-09-27,São Paulo,SP,3,2,1
+2014-09-28,Alagoas,AL,1,0,1
+2014-09-28,Bahia,BA,4,2,2
+2014-09-28,Goiás,GO,4,0,4
+2014-09-28,Minas Gerais,MG,2,1,1
+2014-09-28,Paraná,PR,1,1,0
+2014-09-28,Pernambuco,PE,1,1,0
+2014-09-28,Rio Grande do Norte,RN,1,1,0
+2014-09-28,Rio de Janeiro,RJ,4,1,3
+2014-09-28,Santa Catarina,SC,2,1,1
+2014-09-29,Bahia,BA,7,2,5
+2014-09-29,Rio Grande do Norte,RN,1,0,1
+2014-09-29,Rio Grande do Sul,RS,1,0,1
+2014-09-29,Rio de Janeiro,RJ,6,4,2
+2014-09-29,Santa Catarina,SC,4,1,3
+2014-09-29,São Paulo,SP,1,0,1
