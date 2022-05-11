@@ -159,4 +159,3 @@ df.to_json('/output/desafio_hurb.json', orient='records', force_ascii=True, inde
 
 if __name__ == '__main__':
     pipeline.run()
-
