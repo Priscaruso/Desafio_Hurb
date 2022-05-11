@@ -29,7 +29,7 @@ df_vendas_por_dia = (
 # Permite realizar operações não paralelas com dataframes
 with dataframe.allow_non_parallel_operations():
     # Cria um novo dataframe juntando o conteúdo dos dois beam dataframes criados, resetando o índice
-    df = df_vendas_por_dia.reset_index(drop=True).join(df_estados_ibge.reset_index)
+    df = df_vendas_por_dia.reset_index(drop=True).join(df_estados_ibge.reset_index, how='outer')
 
 
 # Simula o Beam Dataframe como um Pandas Dataframe para usar transformações em pandas
