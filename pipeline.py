@@ -128,6 +128,20 @@ df.loc[filtro_SE, 'Estado'] = 'Sergipe'
 filtro_TO = (df['UF'] == 'TO')
 df.loc[filtro_TO, 'Estado'] = 'Tocantins'
 
+# Cria a coluna 'QtdVendas' com o valor de cada linha da tabela igual a 1, pois cada linha representa uma venda
+df['QtdVendas'] = 1
+
+# Cria coluna 'QtdAprovados' para todas as linhas que tenha valor de 'Status' Aprovado, substituindo seu valor True para
+# 1 e False para 0
+df['QtdAprovados'] = (df['Status'] == 'Aprovado')
+df['QtdAprovados'] = df['QtdAprovados'].replace({True: 1, False: 0})
+
+# Cria coluna 'QtdCancelamentos' para todas as linhas que tenha valor de 'Status' Cancelado, substituindo seu valor True
+# para 1 e False para 0
+df['QtdCancelamentos'] = (df['Status'] == 'Cancelado')
+df['QtdCancelamentos'] = df['QtdCancelamentos'].replace({True: 1, False: 0})
+
+
 
 
 
