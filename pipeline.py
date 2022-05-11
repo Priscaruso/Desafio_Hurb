@@ -2,7 +2,6 @@
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam import dataframe
-import apache_beam.runners.interactive.interactive_beam as ib
 import apache_beam.dataframe.io
 
 # Configura as opções usadas na execução do pipeline
@@ -25,10 +24,6 @@ df_vendas_por_dia = (
         pipeline
         | 'Lê o segundo arquivo CSV' >> beam.dataframe.io.read_csv('input/Vendas_por_dia.csv')
     )
-
-# Simula o Beam Dataframe como um Pandas Dataframe para usar transformações em pandas
-df_estados_ibge = ib.collect(df_estados_ibge)
-df_vendas_por_dia = ib.collect(df_vendas_por_dia)
 
 # Permite realizar operações não paralelas com dataframes
 with dataframe.allow_non_parallel_operations():
