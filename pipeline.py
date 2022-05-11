@@ -5,6 +5,12 @@ from apache_beam import dataframe
 import apache_beam.runners.interactive.interactive_beam as ib
 from apache_beam.runners.interactive.interactive_runner import InteractiveRunner
 import apache_beam.dataframe.io
+# Configura as opções usadas na execução do pipeline
+beam_options = PipelineOptions(
+    runner='DirectRunner',
+    project='data-pipeline',
+    job_name='unique-job-name',
+    temp_location='/home/priscila/PycharmProjects/Projeto_apache_beam')
 
 # Cria o objeto pipeline com as configurações desejadas
 pipeline = beam.Pipeline(InteractiveRunner())
