@@ -1,6 +1,7 @@
 # Importa as bibliotecas a serem utilizadas no código
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
+import apache_beam.dataframe.io
 import apache_beam.runners.interactive.interactive_beam as ib
 
 
