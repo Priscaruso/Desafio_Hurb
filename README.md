@@ -77,6 +77,48 @@ Os seguintes passos são necessários para executar o script no terminal:
 
 
 ## Desenvolvimento do Notebook
+Foi criado nesse projeto também um notebook com os códigos utilizados para gerar o pipeline, com a maioria das etapas iguais a do script, com a diferença no uso de alguns módulos e etapas adicionais.
+As etapas são:
+
+-Importação das bibliotecas: foram utilizadas as bibliotecas apache_beam, módulo dataframe da biblioteca apache_beam para operar com dataframes, módulo apache_beam.runners.interactive.interactive_beam para executar a funcionalidade Interactive Beam e o módulo InteractiveRunner do apache_beam.runners.interactive.interactive_runner.
+
+-Criação do objeto pipeline: objeto que é utilizado na criação do pipeline, usando as configurações do InteractiveRunner.
+
+-Leitura de cada arquivos CSV: Para realizar a leitura dos arquivos CSV foi pensado na nova funcionalidade Beam Dataframe do Apache Beam, que já foi o módulo read_csv, facilitando na leitura desse tipo de arquivo.
+
+-Criação de bloco para execução de operações não paralelas com dataframes: usa a função dataframe.allow_non_parallel_operations() para poder realizar operações não suportadas com o Beam Dataframe. Todas as próximas etapas são executadas dentro desse bloco.
+
+-Merge dos arquivos CSV: junção com join resetando os índices de cada dataframe, para unir dataframes com múltiplos índices.
+
+-Mudança do nome da coluna 'UF': a coluna 'UF [-]' foi renomeada para 'Estado' usando a função 'replace'.
+
+-Remoção de todas as colunas não desejadas: uso da função drop para remover as colunas não desejadas 
+
+-Simulação do Pandas Dataframe: uso do método collect para simular um pandas dataframe através do beam dataframe
+
+-Filtragem e substituição dos valores da coluna 'Estado': os dados ficaram desorganizados com a junção, então foram organizados corretamente de acordo com os valores da coluna 'UF' usando a operação 'loc'
+
+-Criação da coluna 'QtdVendas': a coluna é criada atribuindo-se valor igual a 1 a cada linha dessa coluna usando a operação df['QtdVendas'] = 1. Sabe-se que cada linha 
+do dataframe representa uma venda, por isso valor igual a 1.
+
+-Criação da coluna 'QtdAprovados': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Aprovado'. Como o valor gerado é booleano, usa-se o replace para substituir o valor de 'True' para '1' e 'False' para '0'.
+
+-Criação da coluna 'QtdCancelamentos': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Cancelado'. Como o valor gerado é booleano, usa-se a função replace para substituir o valor de 'True' para '1' e 'False' para '0'.
+
+-Agrupamento dos dados: agrupa-se os dados por 'Data', 'Estado' e ' UF' através da função groupby e soma os valores das linhas das colunas 'QtdVendas', 'QtdAprovados' e 'QtdCancelamentos' por meio da função sum.
+
+-Conversão do formato dos dados para string: usa-se a função convert_dtypes com argumento convert_string=True para converter dados no formato objeto gerados no passo anterior nas colunas 'Estado' e 'UF'.
+
+-Geração do arquivo CSV: uso do módulo to_csv para converter os dataframes para o formato de arquivo CSV, sem salvar os índices e especificando o local onde vai ser salvo o arquivo.
+
+-Geração do arquivo JSON: uso do módulo to_json para converter os dataframes para o formato de arquivo JSON, sem salvar os índices e especificando o local onde vai ser salvo o arquivo, na forma de coluna: valor, forçando o uso do padrão ASCII e indentação igual a 4.
 
 
 ## Execução do Notebook
+Para executar o notebook, é necessário os seguintes passos:
+-Baixar o arquivo do notebook Desafio_Hurb.ipyth e a pasta input com os arquivos de entrada do pipeline
+-Abrir o arquivo no COLAB
+-Fazer o upload da pasta input com os arquivos de entrada para a aba 'Arquivos' do COLAB
+-Criar uma pasta output na aba 'Arquivos' para salvar os arquivos de saída que serão gerados pelo notebook
+-Executar cada célula do notebook
+
