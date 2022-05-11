@@ -141,6 +141,21 @@ df['QtdAprovados'] = df['QtdAprovados'].replace({True: 1, False: 0})
 df['QtdCancelamentos'] = (df['Status'] == 'Cancelado')
 df['QtdCancelamentos'] = df['QtdCancelamentos'].replace({True: 1, False: 0})
 
+# Agrupa os dados por 'Data', 'Estado' e 'UF', somando os valores númericos de 'QtdVendas', 'QtdAprovados',
+# 'QtdCancelamentos e armazenas essas alterações no dataframe df
+df = df.groupby(['Data', 'Estado', 'UF'], as_index=False)['QtdVendas','QtdAprovados','QtdCancelamentos'].\
+    sum(numeric_only=True)
+
+# Converte os dados das colunas 'Estados' e 'UF' para string
+df['Estado'] = df['Estado'].convert_dtypes(convert_string=True)
+df['UF'] = df['UF'].convert_dtypes(convert_string=True)
+
+# Converte o dataframe df gerado para CSV sem salvar os índices, armazenando o arquivo na pasta output
+df.to_csv('/output/desafio_hurb.csv', index=False)
+
+# Converte o dataframe df gerado para JSON sem salvar os índices, com indentação de 4 linhas, armazenando o arquivo na
+# pasta output
+df.to_json('/content/teste/desafio_hurb.json', orient='records', force_ascii=True, indent=4)
 
 
 
