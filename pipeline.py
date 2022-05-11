@@ -3,7 +3,6 @@ import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam import dataframe
 import apache_beam.dataframe.io
-import apache_beam.runners.interactive.interactive_beam as ib
 
 
 # Configura as opções usadas na execução do pipeline
@@ -42,14 +41,11 @@ with dataframe.allow_non_parallel_operations():
 
     # Remove todas as colunas não desejadas do dataframe
     df = df.drop(['Código [-]', 'Gentílico [-]', 'Governador [2019]', 'Capital [2010]',
-                                             'Área Territorial - km² [2019]', 'População estimada - pessoas [2020]',
-                                             'Densidade demográfica - hab/km² [2010]',
-                                             'Matrículas no ensino fundamental - matrículas [2018]',
-                                             'IDH <span>Índice de desenvolvimento humano</span> [2010]',
-                                             'Receitas realizadas - R$ (×1000) [2017]',
-                                             'Despesas empenhadas - R$ (×1000) [2017]',
-                                             'Rendimento mensal domiciliar per capita - R$ [2019]',
-                                             'Total de veículos - veículos [2018]'], axis=1)
+                  'Área Territorial - km² [2019]', 'População estimada - pessoas [2020]',
+                  'Densidade demográfica - hab/km² [2010]', 'Matrículas no ensino fundamental - matrículas [2018]',
+                  'IDH <span>Índice de desenvolvimento humano</span> [2010]',
+                  'Receitas realizadas - R$ (×1000) [2017]', 'Despesas empenhadas - R$ (×1000) [2017]',
+                  'Rendimento mensal domiciliar per capita - R$ [2019]', 'Total de veículos - veículos [2018]'], axis=1)
 
     # Filtra e substitui os valores de NaN pelos estados de acordo com os valores da coluna 'UF'
     filtro_AC = (df['UF'] == 'AC')
