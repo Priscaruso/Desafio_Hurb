@@ -1,10 +1,10 @@
 # Importa as bibliotecas a serem utilizadas no código
 import apache_beam as beam
-#rom apache_beam.options.pipeline_options import PipelineOptions
+from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam import dataframe
 import apache_beam.runners.interactive.interactive_beam as ib
-from apache_beam.runners.interactive.interactive_runner import InteractiveRunner
 import apache_beam.dataframe.io
+
 # Configura as opções usadas na execução do pipeline
 beam_options = PipelineOptions(
     runner='DirectRunner',
@@ -13,7 +13,7 @@ beam_options = PipelineOptions(
     temp_location='/home/priscila/PycharmProjects/Projeto_apache_beam')
 
 # Cria o objeto pipeline com as configurações desejadas
-pipeline = beam.Pipeline(InteractiveRunner())
+pipeline = beam.Pipeline(options=beam_options)
 
 # Pipeline que lê cada arquivo CSV como um Beam Dataframe
 df_estados_ibge = (
