@@ -157,6 +157,8 @@ df.to_csv('/output/desafio_hurb.csv', index=False)
 # pasta output
 df.to_json('/content/teste/desafio_hurb.json', orient='records', force_ascii=True, indent=4)
 
+if __name__ == '__main__':
+    pipeline.run()
 
 
 
