@@ -33,7 +33,7 @@ merged_df = df_estados_ibge.join(df_vendas_por_dia, how='outer')
 renamed_column_df = merged_df.rename(columns={'UF [-]': 'Estado'})
 
 # Remove todas as colunas não desejadas do dataframe
-dropped_columns_df = renamed_column_df.drop(['Código [-]','Gentílico [-]','Governador [2019]','Capital [2010]',
+dropped_columns_df = renamed_column_df.drop(['Código [-]', 'Gentílico [-]', 'Governador [2019]', 'Capital [2010]',
                                              'Área Territorial - km² [2019]', 'População estimada - pessoas [2020]',
                                              'Densidade demográfica - hab/km² [2010]',
                                              'Matrículas no ensino fundamental - matrículas [2018]',
@@ -143,7 +143,7 @@ df['QtdCancelamentos'] = df['QtdCancelamentos'].replace({True: 1, False: 0})
 
 # Agrupa os dados por 'Data', 'Estado' e 'UF', somando os valores númericos de 'QtdVendas', 'QtdAprovados',
 # 'QtdCancelamentos e armazenas essas alterações no dataframe df
-df = df.groupby(['Data', 'Estado', 'UF'], as_index=False)['QtdVendas','QtdAprovados','QtdCancelamentos'].\
+df = df.groupby(['Data', 'Estado', 'UF'], as_index=False)['QtdVendas', 'QtdAprovados', 'QtdCancelamentos'].\
     sum(numeric_only=True)
 
 # Converte os dados das colunas 'Estados' e 'UF' para string
@@ -159,9 +159,4 @@ df.to_json('/output/desafio_hurb.json', orient='records', force_ascii=True, inde
 
 if __name__ == '__main__':
     pipeline.run()
-
-
-
-
-
 
