@@ -137,7 +137,7 @@ with dataframe.allow_non_parallel_operations():
     df['QtdCancelamentos'] = df['QtdCancelamentos'].replace({True: 1, False: 0})
 
     # Agrupa os dados por 'Data', 'Estado' e 'UF', somando os valores númericos de 'QtdVendas', 'QtdAprovados',
-    # 'QtdCancelamentos e armazenas essas alterações no dataframe df
+    # 'QtdCancelamentos e armazena essas alterações no dataframe df
     df = df.groupby(['Data', 'Estado', 'UF'], as_index=False)['QtdVendas', 'QtdAprovados', 'QtdCancelamentos'].\
         sum(numeric_only=True)
 
