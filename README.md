@@ -22,8 +22,8 @@
   -Estado
   -UF
   -QtdVendas
-  -QtdAprovados
   -QtdCancelamentos
+  -QtdAprovados
   
   As razões de se utilizar o Apache Beam para criação de pipelines, é que ele permite criar um modelo de programação unificada tanto para processamento em batch quanto
   para streaming. Isso simplica bastante o processamento em larga escala. Além disso, ele permite a utilização de diversas linguagens de programação; é open-source, o
@@ -56,9 +56,9 @@ Para o desenvolvimento do script, foi pensado na divisão do mesmo de acordo com
 -Criação da coluna 'QtdVendas': a coluna é criada atribuindo-se valor igual a 1 a cada linha dessa coluna usando a operação df['QtdVendas'] = 1. Sabe-se que cada linha 
 do dataframe representa uma venda, por isso valor igual a 1.
 
--Criação da coluna 'QtdAprovados': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Aprovado'. Como o valor gerado é booleano, usa-se o replace para substituir o valor de 'True' para '1' e 'False' para '0'.
+-Criação da coluna 'QtdCancelamentos': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Cancelado'. Como o valor gerado é booleano, usa-se a função replace para substituir o valor de 'True' para '1' e 'False' para '0'.-Criação da coluna 'QtdCancelamentos': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Cancelado'. Como o valor gerado é booleano, usa-se a função replace para substituir o valor de 'True' para '1' e 'False' para '0'.
 
--Criação da coluna 'QtdCancelamentos': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Cancelado'. Como o valor gerado é booleano, usa-se a função replace para substituir o valor de 'True' para '1' e 'False' para '0'.
+-Criação da coluna 'QtdAprovados': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Aprovado'. Como o valor gerado é booleano, usa-se o replace para substituir o valor de 'True' para '1' e 'False' para '0'.
 
 -Agrupamento dos dados: agrupa-se os dados por 'Data', 'Estado' e ' UF' através da função groupby e soma os valores das linhas das colunas 'QtdVendas', 'QtdAprovados' e 'QtdCancelamentos' por meio da função sum.
 
@@ -110,9 +110,9 @@ As etapas são:
 -Criação da coluna 'QtdVendas': a coluna é criada atribuindo-se valor igual a 1 a cada linha dessa coluna usando a operação df['QtdVendas'] = 1. Sabe-se que cada linha 
 do dataframe representa uma venda, por isso valor igual a 1.
 
--Criação da coluna 'QtdAprovados': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Aprovado'. Como o valor gerado é booleano, usa-se o replace para substituir o valor de 'True' para '1' e 'False' para '0'.
-
 -Criação da coluna 'QtdCancelamentos': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Cancelado'. Como o valor gerado é booleano, usa-se a função replace para substituir o valor de 'True' para '1' e 'False' para '0'.
+
+-Criação da coluna 'QtdAprovados': a coluna é criada para todas as linhas que tenha o valor da coluna 'Status' igual 'Aprovado'. Como o valor gerado é booleano, usa-se o replace para substituir o valor de 'True' para '1' e 'False' para '0'.
 
 -Agrupamento dos dados: agrupa-se os dados por 'Data', 'Estado' e ' UF' através da função groupby e soma os valores das linhas das colunas 'QtdVendas', 'QtdAprovados' e 'QtdCancelamentos' por meio da função sum.
 
