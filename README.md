@@ -6,9 +6,11 @@
 
 :small_blue_diamond: [Desenvolvimento do Script](#desenvolvimento-do-script)
 
-:small_blue_diamond: [Execução do script](#execucao-do-script)
+:small_blue_diamond: [Execução do script](#execução-do-script)
 
-:small_blue_diamond: [Execução do notebook](#execucao-do-notebook)
+:small_blue_diamond: [Desenvolvimento do notebook](#desenvolvimento-do-notebook)
+
+:small_blue_diamond: [Execução do notebook](#execução-do-notebook)
 
 
 ## Descrição do projeto 
@@ -29,16 +31,17 @@
   e executa tarefas ETL, muito usada para mover dados entre diferentes fontes de armazenamento.
 </p>
 
+
 ## Desenvolvimento do Script
 Para o desenvolvimento do script, foi pensado na divisão do mesmo de acordo com as seguintes etapas:
 
 -Importação das bibliotecas: foram utilizadas as bibliotecas apache_beam, módulo dataframe da biblioteca apache_beam para operar com dataframes, módulo PipelineOptions do apache_beam.options.pipeline_options para configurar as opções do pipeline e o módulo apache_beam.dataframe.io para usar o módulo read_csv na leitura de arquivos csv.
 
--Configuração das opções do pipeline: uso do módulo beam.options para configurar o Runner que executará o pipeline, que no caso é o DirectRunner para ser executado localmente.
+-Configuração das opções do pipeline: uso do módulo beam.options para configurar o Runner que executará o pipeline, que no caso é o DirectRunner para ser executado localmente. Deve-se escolher como caminho para a variável 'temp_location' a pasta onde está armazenada o projeto.
 
 -Criação do objeto pipeline: objeto que é utilizado na criação do pipeline, usando as configurações feitas nas opções no passo anterior.
 
--Leitura de cada arquivos CSV: Para realizar a leitura dos arquivos CSV foi pensado na nova funcionalidade Beam Dataframe do Apache Beam, que já foi o módulo read_csv, facilitando na leitura desse tipo de arquivo.
+-Leitura de cada arquivos CSV: Para realizar a leitura dos arquivos CSV foi pensado na nova funcionalidade Beam Dataframe do Apache Beam, que já foi o módulo read_csv, facilitando na leitura desse tipo de arquivo. O caminho passado ao usar read_csv deve estar de acordo com a pasta input, onde está armazenado os arquivos de entrada do pipeline.
 
 -Criação de bloco para execução de operações não paralelas com dataframes: usa a função dataframe.allow_non_parallel_operations() para poder realizar operações não suportadas com o Beam Dataframe. Todas as próximas etapas são executadas dentro desse bloco.
 
@@ -65,15 +68,21 @@ do dataframe representa uma venda, por isso valor igual a 1.
 
 -Geração do arquivo JSON: uso do módulo to_json para converter os dataframes para o formato de arquivo JSON, sem salvar os índices e especificando o local onde vai ser salvo o arquivo, na forma de coluna: valor, forçando o uso do padrão ASCII e indentação igual a 4.
 
+
 ## Execução do Script
 Os seguintes passos são necessários para executar o script no terminal:
+
 -Baixar o script pipeline.py e a pasta input onde estão os arquivos de entrada para o pipeline
+
 -Criar um ambiente virtual com os comandos 'python -m venv /path/to/directory' onde /path/to/directory é o diretório onde será criado o ambiente virtual
+
 -Ativar o ambiente virtual com o comando '. /path/to/directory/bin/activate'
+
 -Instalar o Apache Beam com o comando 'pip install apache-beam'
+
 -Instalar a funcionalidade dataframe com o comando 'pip install apache-beam[dataframe]'
--Executar o pipeline localmente com o DirectRunner por meio do comando 'python -m apache_beam.pipeline --input /path/to/inputfile --output /path/to/write/counts', onde
-/path/to/inputfile é o caminho para a pasta onde estão os arquivos de entrada baixado e '/path/to/write/counts' é o caminho para a pasta onde será armazenado os arquivos de saída gerados pelo pipeline
+
+-Executar o pipeline localmente com o DirectRunner por meio do comando 'python -m apache_beam.pipeline --input /path/to/inputfile --output /path/to/write/counts', onde /path/to/inputfile é o caminho para a pasta onde estão os arquivos de entrada baixado especificado no script do pipeline e '/path/to/write/counts' é o caminho para a pasta onde será armazenado os arquivos de saída gerados pelo pipeline, de acordo com o caminho especificado no script pipeline.
 
 
 ## Desenvolvimento do Notebook
@@ -116,9 +125,14 @@ do dataframe representa uma venda, por isso valor igual a 1.
 
 ## Execução do Notebook
 Para executar o notebook, é necessário os seguintes passos:
+
 -Baixar o arquivo do notebook Desafio_Hurb.ipyth e a pasta input com os arquivos de entrada do pipeline
+
 -Abrir o arquivo no COLAB
+
 -Fazer o upload da pasta input com os arquivos de entrada para a aba 'Arquivos' do COLAB
+
 -Criar uma pasta output na aba 'Arquivos' para salvar os arquivos de saída que serão gerados pelo notebook
+
 -Executar cada célula do notebook
 
